@@ -70,7 +70,6 @@
             flex-direction: column;
         }
 
-        /* Dynamic Island */
         .dynamic-island {
             position: absolute;
             top: 10px;
@@ -95,7 +94,6 @@
             gap: 5px;
         }
 
-        /* Status Bar */
         .status-bar {
             position: absolute;
             top: 15px;
@@ -111,7 +109,6 @@
             font-weight: 600;
         }
 
-        /* Home Screen */
         .home-screen {
             position: relative;
             flex: 1;
@@ -136,7 +133,6 @@
             text-align: center;
         }
 
-        /* App Grid */
         .app-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -177,7 +173,6 @@
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
-        /* Dock */
         .dock {
             position: absolute;
             bottom: 20px;
@@ -193,12 +188,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .dock-app {
-            text-align: center;
-            color: white;
-            cursor: pointer;
-        }
-
         .dock-app .icon {
             width: 62px;
             height: 62px;
@@ -210,11 +199,6 @@
             margin-bottom: 6px;
         }
 
-        .dock-app .app-name {
-            font-size: 11px;
-        }
-
-        /* App Pages */
         .app-page {
             position: absolute;
             top: 0;
@@ -267,42 +251,23 @@
             overflow-y: auto;
         }
 
-        /* ALEX SHOP Styles */
-        .shop-category {
-            margin-bottom: 30px;
-        }
-
-        .shop-category h3 {
-            margin-bottom: 15px;
-            color: #333;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-        }
-
-        .product-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
         .product-item {
             background: #f8f8f8;
             border-radius: 12px;
             padding: 15px;
             border: 1px solid #e0e0e0;
+            margin-bottom: 20px;
         }
 
         .product-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             margin-bottom: 10px;
         }
 
         .product-name {
             font-weight: 600;
             font-size: 16px;
-            color: #333;
         }
 
         .product-price {
@@ -313,8 +278,8 @@
 
         .product-features {
             margin: 10px 0;
-            font-size: 14px;
             color: #666;
+            font-size: 14px;
         }
 
         .feature-item {
@@ -325,8 +290,8 @@
 
         .feature-item i {
             margin-left: 8px;
-            color: var(--ios-blue);
             margin-top: 3px;
+            color: var(--ios-blue);
         }
 
         .buy-button {
@@ -334,19 +299,11 @@
             color: white;
             border: none;
             border-radius: 8px;
-            padding: 10px 15px;
+            padding: 10px;
             font-weight: 600;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
             width: 100%;
-            transition: background 0.2s;
-        }
-
-        .buy-button:hover {
-            background: #0062cc;
+            margin-top: 10px;
         }
 
         .product-warranty {
@@ -355,49 +312,13 @@
             color: #888;
             text-align: center;
         }
-
-        /* Category Grid */
-        .category-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .category-item {
-            background: linear-gradient(135deg, var(--ios-blue), #0A84FF);
-            border-radius: 20px;
-            padding: 30px 20px;
-            text-align: center;
-            color: white;
-            cursor: pointer;
-            transition: transform 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .category-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .category-item.vpn {
-            background: linear-gradient(135deg, var(--ios-green), #32D74B);
-        }
-
-        .category-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .category-name {
-            font-size: 18px;
-            font-weight: 600;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="iphone-container">
             <div class="screen">
+
                 <!-- Dynamic Island -->
                 <div class="dynamic-island">
                     <div class="island-content">
@@ -408,7 +329,7 @@
                         <i class="fas fa-play"></i>
                     </div>
                 </div>
-                
+
                 <!-- Status Bar -->
                 <div class="status-bar">
                     <span id="time">١٧:٣٠</span>
@@ -418,13 +339,12 @@
                         <i class="fas fa-battery-full"></i>
                     </span>
                 </div>
-                
+
                 <!-- Home Screen -->
                 <div class="home-screen" id="homeScreen">
                     <div class="alex-shop-text">Alex Shop</div>
-                    <div class="app-grid" id="appGrid">
-                        <!-- سيتم إضافة الأيقونات عبر JavaScript -->
-                    </div>
+                    <div class="app-grid" id="appGrid"></div>
+
                     <div class="dock">
                         <div class="dock-app" onclick="openApp('alexshop')">
                             <div class="icon" style="background: linear-gradient(135deg, var(--ios-orange), #FF9F0A);">
@@ -435,7 +355,7 @@
                     </div>
                 </div>
 
-                <!-- ALEX SHOP App - Main Page -->
+                <!-- ALEX SHOP App -->
                 <div class="app-page" id="alexshopApp">
                     <div class="app-header">
                         <button class="back-button" onclick="closeApp('alexshop')">
@@ -443,29 +363,30 @@
                         </button>
                         <div class="app-title">ALEX SHOP</div>
                     </div>
+
                     <div class="app-content">
-                        <h2 style="text-align: center; margin-bottom: 20px; color: #333;">مرحباً بكم في ALEX SHOP</h2>
-                        <p style="text-align: center; margin-bottom: 30px; color: #666;">اختر القسم الذي تريد تصفحه</p>
-                        
+
+                        <h2 style="text-align:center; margin-bottom:20px;">مرحباً بكم في ALEX SHOP</h2>
+                        <p style="text-align:center; margin-bottom:30px;">اختر القسم الذي تريد تصفحه</p>
+
                         <div class="category-grid">
+
                             <div class="category-item vpn" onclick="openCategory('vpn')">
-                                <div class="category-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
+                                <div class="category-icon"><i class="fas fa-shield-alt"></i></div>
                                 <div class="category-name">اشتراكات VPN</div>
                             </div>
-                            
+
                             <div class="category-item" onclick="openCategory('rdp')">
-                                <div class="category-icon">
-                                    <i class="fas fa-server"></i>
-                                </div>
+                                <div class="category-icon"><i class="fas fa-server"></i></div>
                                 <div class="category-name">Windows Server RDP</div>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
 
-                <!-- VPN Category Page -->
+                <!-- VPN PAGE -->
                 <div class="app-page" id="vpnCategory">
                     <div class="app-header">
                         <button class="back-button" onclick="closeCategory('vpn')">
@@ -473,40 +394,39 @@
                         </button>
                         <div class="app-title">اشتراكات VPN</div>
                     </div>
+
                     <div class="app-content">
+
                         <!-- ExpressVPN -->
                         <div class="product-item">
                             <div class="product-header">
                                 <div class="product-name">ExpressVPN</div>
                                 <div class="product-price">75 جنيه</div>
                             </div>
+
                             <div class="product-features">
                                 <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>شهر ضمان المده كامله</span>
+                                    <i class="fas fa-check"></i> <span>شهر ضمان المدة كاملة</span>
                                 </div>
                                 <div class="feature-item">
-                                    <i class="fas fa-server"></i>
-                                    <span>شبكة خوادم كبيرة جدًا (~105 دولة)</span>
+                                    <i class="fas fa-server"></i> <span>شبكة خوادم كبيرة جدًا</span>
                                 </div>
                                 <div class="feature-item">
-                                    <i class="fas fa-bolt"></i>
-                                    <span>سرعة عالية مع بروتوكول Lightway</span>
+                                    <i class="fas fa-bolt"></i> <span>سرعة عالية</span>
                                 </div>
                                 <div class="feature-item">
-                                    <i class="fas fa-lock"></i>
-                                    <span>تشفير AES-256 قوي</span>
+                                    <i class="fas fa-lock"></i> <span>تشفير قوي</span>
                                 </div>
                                 <div class="feature-item">
-                                    <i class="fas fa-user-secret"></i>
-                                    <span>سياسة "no-logs" للخصوصية</span>
+                                    <i class="fas fa-user-secret"></i> <span>سياسة no-logs</span>
                                 </div>
                             </div>
-                            <button class="buy-button" onclick="buyProduct('ExpressVPN', 75)">
-                                <i class="fab fa-whatsapp"></i>
-                                شراء عبر واتساب
+
+                            <button class="buy-button" onclick="buyProduct('ExpressVPN',75)">
+                                <i class="fab fa-whatsapp"></i> شراء عبر واتساب
                             </button>
-                            <div class="product-warranty">ضمان المدة كاملة - 30 يوم استرداد</div>
+
+                            <div class="product-warranty">مدة الاشتراك شهر مع ضمان المدة كاملة</div>
                         </div>
 
                         <!-- ProtonVPN -->
@@ -515,38 +435,36 @@
                                 <div class="product-name">ProtonVPN</div>
                                 <div class="product-price">75 جنيه</div>
                             </div>
+
                             <div class="product-features">
                                 <div class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>شهر ضمان المده كامله</span>
+                                    <i class="fas fa-check"></i> <span>شهر ضمان المدة كاملة</span>
                                 </div>
                                 <div class="feature-item">
-                                    <i class="fas fa-shield-alt"></i>
-                                    <span>خصوصية قوية (سويسرا)</span>
+                                    <i class="fas fa-shield-alt"></i> <span>خصوصية قوية</span>
                                 </div>
                                 <div class="feature-item">
-                                    <i class="fas fa-code-branch"></i>
-                                    <span>ميزة Secure Core متعددة الخوادم</span>
+                                    <i class="fas fa-code-branch"></i> <span>ميزة Secure Core</span>
                                 </div>
                                 <div class="feature-item">
-                                    <i class="fas fa-bolt"></i>
-                                    <span>بروتوكولات حديثة (WireGuard)</span>
+                                    <i class="fas fa-bolt"></i> <span>بروتوكولات سريعة</span>
                                 </div>
                                 <div class="feature-item">
-                                    <i class="fas fa-eye-slash"></i>
-                                    <span>ميزة Stealth لإخفاء الترافيك</span>
+                                    <i class="fas fa-eye-slash"></i> <span>ميزة إخفاء الترافيك</span>
                                 </div>
                             </div>
-                            <button class="buy-button" onclick="buyProduct('ProtonVPN', 75)">
-                                <i class="fab fa-whatsapp"></i>
-                                شراء عبر واتساب
+
+                            <button class="buy-button" onclick="buyProduct('ProtonVPN',75)">
+                                <i class="fab fa-whatsapp"></i> شراء عبر واتساب
                             </button>
-                            <div class="product-warranty">ضمان المدة كاملة - 30 يوم استرداد</div>
+
+                            <div class="product-warranty">مدة الاشتراك شهر مع ضمان المدة كاملة</div>
                         </div>
+
                     </div>
                 </div>
 
-                <!-- RDP Category Page -->
+                <!-- RDP PAGE -->
                 <div class="app-page" id="rdpCategory">
                     <div class="app-header">
                         <button class="back-button" onclick="closeCategory('rdp')">
@@ -554,198 +472,133 @@
                         </button>
                         <div class="app-title">Windows Server RDP</div>
                     </div>
+
                     <div class="app-content">
-                        <!-- Basic Plan -->
+
+                        <!-- Basic -->
                         <div class="product-item">
                             <div class="product-header">
                                 <div class="product-name">الباقة الأساسية</div>
                                 <div class="product-price">700 جنيه</div>
                             </div>
+
                             <div class="product-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-microchip"></i>
-                                    <span>المعالج: 2 كور</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-microchip"></i>
-                                    <span>الأنوية: 2</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-memory"></i>
-                                    <span>الرام: 4 جيجا</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-hdd"></i>
-                                    <span>التخزين: 40 جيجا SSD</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>المكان: ألمانيا</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-user-shield"></i>
-                                    <span>صلاحيات الأدمن كاملة</span>
-                                </div>
+                                <div class="feature-item"><i class="fas fa-microchip"></i> المعالج: 2 كور</div>
+                                <div class="feature-item"><i class="fas fa-memory"></i> الرام: 4 جيجا</div>
+                                <div class="feature-item"><i class="fas fa-hdd"></i> التخزين: 40 جيجا SSD</div>
+                                <div class="feature-item"><i class="fas fa-map-marker-alt"></i> ألمانيا</div>
+                                <div class="feature-item"><i class="fas fa-user-shield"></i> صلاحيات أدمن</div>
                             </div>
-                            <button class="buy-button" onclick="buyProduct('الباقة الأساسية RDP', 700)">
-                                <i class="fab fa-whatsapp"></i>
-                                شراء عبر واتساب
+
+                            <button class="buy-button" onclick="buyProduct('RDP Basic',700)">
+                                <i class="fab fa-whatsapp"></i> شراء عبر واتساب
                             </button>
-                            <div class="product-warranty">ضمان المدة كاملة - شهر</div>
+
+                            <div class="product-warranty">مدة الاشتراك شهر مع ضمان المدة كاملة</div>
                         </div>
 
-                        <!-- Medium Plan -->
+                        <!-- Medium -->
                         <div class="product-item">
                             <div class="product-header">
                                 <div class="product-name">الباقة المتوسطة</div>
                                 <div class="product-price">1000 جنيه</div>
                             </div>
+
                             <div class="product-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-microchip"></i>
-                                    <span>المعالج: 4 كور</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-microchip"></i>
-                                    <span>الأنوية: 4</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-memory"></i>
-                                    <span>الرام: 8 جيجا</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-hdd"></i>
-                                    <span>التخزين: 80 جيجا SSD</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>المكان: ألمانيا</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-user-shield"></i>
-                                    <span>صلاحيات الأدمن كاملة</span>
-                                </div>
+                                <div class="feature-item"><i class="fas fa-microchip"></i> المعالج: 4 كور</div>
+                                <div class="feature-item"><i class="fas fa-memory"></i> الرام: 8 جيجا</div>
+                                <div class="feature-item"><i class="fas fa-hdd"></i> التخزين: 80 جيجا SSD</div>
+                                <div class="feature-item"><i class="fas fa-map-marker-alt"></i> ألمانيا</div>
+                                <div class="feature-item"><i class="fas fa-user-shield"></i> صلاحيات أدمن</div>
                             </div>
-                            <button class="buy-button" onclick="buyProduct('الباقة المتوسطة RDP', 1000)">
-                                <i class="fab fa-whatsapp"></i>
-                                شراء عبر واتساب
+
+                            <button class="buy-button" onclick="buyProduct('RDP Medium',1000)">
+                                <i class="fab fa-whatsapp"></i> شراء عبر واتساب
                             </button>
-                            <div class="product-warranty">ضمان المدة كاملة - شهر</div>
+
+                            <div class="product-warranty">مدة الاشتراك شهر مع ضمان المدة كاملة</div>
                         </div>
 
-                        <!-- Advanced Plan -->
+                        <!-- Advanced -->
                         <div class="product-item">
                             <div class="product-header">
                                 <div class="product-name">الباقة المتقدمة</div>
                                 <div class="product-price">2000 جنيه</div>
                             </div>
+
                             <div class="product-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-microchip"></i>
-                                    <span>المعالج: 8 كور</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-microchip"></i>
-                                    <span>الأنوية/المسارات: 8</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-memory"></i>
-                                    <span>الرام: 16 جيجا</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-hdd"></i>
-                                    <span>التخزين: 160 جيجا SSD</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>المكان: ألمانيا</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-user-shield"></i>
-                                    <span>صلاحيات الأدمن كاملة</span>
-                                </div>
+                                <div class="feature-item"><i class="fas fa-microchip"></i> المعالج: 8 كور</div>
+                                <div class="feature-item"><i class="fas fa-memory"></i> الرام: 16 جيجا</div>
+                                <div class="feature-item"><i class="fas fa-hdd"></i> التخزين: 160 جيجا SSD</div>
+                                <div class="feature-item"><i class="fas fa-map-marker-alt"></i> ألمانيا</div>
+                                <div class="feature-item"><i class="fas fa-user-shield"></i> صلاحيات أدمن</div>
                             </div>
-                            <button class="buy-button" onclick="buyProduct('الباقة المتقدمة RDP', 2000)">
-                                <i class="fab fa-whatsapp"></i>
-                                شراء عبر واتساب
+
+                            <button class="buy-button" onclick="buyProduct('RDP Advanced',2000)">
+                                <i class="fab fa-whatsapp"></i> شراء عبر واتساب
                             </button>
-                            <div class="product-warranty">ضمان المدة كاملة - شهر</div>
+
+                            <div class="product-warranty">مدة الاشتراك شهر مع ضمان المدة كاملة</div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 
-    <script>
-        // تطبيقات الشاشة الرئيسية - فقط ALEX SHOP
-        const apps = [
-            { name: 'ALEX SHOP', icon: 'fas fa-shopping-bag', id: 'alexshop', color: 'linear-gradient(135deg, var(--ios-orange), #FF9F0A)' }
-        ];
 
-        // إنشاء الأيقونات
-        const appGrid = document.getElementById('appGrid');
-        apps.forEach(app => {
-            const appElement = document.createElement('div');
-            appElement.className = 'app-icon';
-            appElement.innerHTML = `
-                <div class="icon" style="background: ${app.color};">
-                    <i class="${app.icon}"></i>
-                </div>
-                <div class="app-name">${app.name}</div>
-            `;
-            appElement.onclick = () => openApp(app.id);
-            appGrid.appendChild(appElement);
-        });
+<script>
+    const apps = [
+        { name: 'ALEX SHOP', icon: 'fas fa-shopping-bag', id: 'alexshop',
+          color: 'linear-gradient(135deg, var(--ios-orange), #FF9F0A)' }
+    ];
 
-        // وظائف التطبيقات
-        function openApp(appId) {
-            if (appId === 'alexshop') {
-                document.getElementById('alexshopApp').classList.add('active');
-            }
-        }
+    const appGrid = document.getElementById('appGrid');
+    apps.forEach(app => {
+        const appElement = document.createElement('div');
+        appElement.className = 'app-icon';
+        appElement.innerHTML = `
+            <div class="icon" style="background:${app.color};">
+                <i class="${app.icon}"></i>
+            </div>
+            <div class="app-name">${app.name}</div>
+        `;
+        appElement.onclick = () => openApp(app.id);
+        appGrid.appendChild(appElement);
+    });
 
-        function closeApp(appId) {
-            document.getElementById(`${appId}App`).classList.remove('active');
-        }
+    function openApp(id) {
+        document.getElementById(id + "App").classList.add("active");
+    }
 
-        function openCategory(category) {
-            if (category === 'vpn') {
-                document.getElementById('vpnCategory').classList.add('active');
-            } else if (category === 'rdp') {
-                document.getElementById('rdpCategory').classList.add('active');
-            }
-        }
+    function closeApp(id) {
+        document.getElementById(id + "App").classList.remove("active");
+    }
 
-        function closeCategory(category) {
-            if (category === 'vpn') {
-                document.getElementById('vpnCategory').classList.remove('active');
-            } else if (category === 'rdp') {
-                document.getElementById('rdpCategory').classList.remove('active');
-            }
-        }
+    function openCategory(cat) {
+        document.getElementById(cat + "Category").classList.add("active");
+    }
 
-        // وظيفة الشراء عبر واتساب - الرقم مصحح
-        function buyProduct(productName, price) {
-            const phoneNumber = "201276205280"; // الرقم المصحح بدون +
-            const message = `أريد شراء ${productName} بسعر ${price} جنيه`;
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
+    function closeCategory(cat) {
+        document.getElementById(cat + "Category").classList.remove("active");
+    }
 
-        // تحديث الوقت
-        function updateTime() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('ar-EG', { 
-                hour: '2-digit', 
-                minute: '2-digit',
-                hour12: false 
-            });
-            document.getElementById('time').textContent = timeString;
-        }
+    function buyProduct(name, price) {
+        const number = "201276205280";
+        const text = `أريد شراء ${name} بسعر ${price} جنيه`;
+        window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`, "_blank");
+    }
 
-        setInterval(updateTime, 1000);
-        updateTime();
-    </script>
+    function updateTime() {
+        const now = new Date();
+        document.getElementById('time').textContent =
+            now.toLocaleTimeString('ar-EG',{hour:'2-digit',minute:'2-digit',hour12:false});
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+</script>
+
 </body>
 </html>
